@@ -49,9 +49,9 @@
 
 <script>
 import { mapActions } from 'vuex';
-import { isAddress } from '@ethersproject/address';
-import { keccak256 } from '@ethersproject/keccak256';
-import { toUtf8Bytes } from '@ethersproject/strings';
+import { isAddress } from '@wansproject/address';
+import { keccak256 } from '@wansproject/keccak256';
+import { toUtf8Bytes } from '@wansproject/strings';
 import { call, sendTransaction } from '@snapshot-labs/snapshot.js/src/utils';
 import getProvider from '@/helpers/provider';
 import abi from '@/helpers/abi';

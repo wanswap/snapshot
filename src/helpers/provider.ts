@@ -1,4 +1,4 @@
-import { JsonRpcProvider } from '@ethersproject/providers';
+import { JsonRpcProvider } from '@wansproject/providers';
 import networks from '@/helpers/networks.json';
 
 const providers = {};

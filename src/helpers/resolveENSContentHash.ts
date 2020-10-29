@@ -1,7 +1,7 @@
 // https://github.com/Uniswap/uniswap-interface/blob/master/src/utils/resolveENSContentHash.ts
-import { Contract } from '@ethersproject/contracts';
-import { Provider } from '@ethersproject/abstract-provider';
-import { namehash } from '@ethersproject/hash';
+import { Contract } from '@wansproject/contracts';
+import { Provider } from '@wansproject/abstract-provider';
+import { namehash } from '@wansproject/hash';
 
 const REGISTRAR_ABI = [
   {

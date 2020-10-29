@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import { getInstance } from '@snapshot-labs/lock/plugins/vue';
-import { Web3Provider } from '@ethersproject/providers';
+import { Web3Provider } from '@wansproject/providers';
 import store from '@/store';
 import config from '@/helpers/config';
 import getProvider from '@/helpers/provider';
-import { formatUnits } from '@ethersproject/units';
+import { formatUnits } from '@wansproject/units';
 
 let wsProvider;
 let auth;
