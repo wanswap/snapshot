@@ -79,7 +79,7 @@ export default {
     return {
       step: null,
       path:
-        'https://raw.githubusercontent.com/snapshot-labs/lock/master/connectors/assets'
+        'https://raw.githubusercontent.com/wanswap/lock/master/connectors/assets'
     };
   },
   watch: {
