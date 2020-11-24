@@ -113,6 +113,7 @@ const actions = {
     commit('GET_PROPOSALS_REQUEST');
     try {
       let proposals: any = await client.request(`${space.key}/proposals`);
+      // console.log('proposals', proposals, space.strategies);
       if (proposals) {
         const scores: any = await getScores(
           space.strategies,
@@ -120,6 +121,8 @@ const actions = {
           getProvider(space.network),
           Object.values(proposals).map((proposal: any) => proposal.address)
         );
+        // console.log('scores', scores);
+
         proposals = Object.fromEntries(
           Object.entries(proposals).map((proposal: any) => {
             proposal[1].score = scores.reduce(
@@ -130,6 +133,7 @@ const actions = {
           })
         );
       }
+      // console.log('proposals return', proposals);
       commit('GET_PROPOSALS_SUCCESS');
       return formatProposals(proposals);
     } catch (e) {
@@ -160,7 +164,7 @@ const actions = {
         // @ts-ignore
         blockTag
       );
-      console.log('Scores', scores);
+      // console.log('Scores', scores);
       result.votes = Object.fromEntries(
         Object.entries(result.votes)
           .map((vote: any) => {

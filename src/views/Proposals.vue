@@ -68,7 +68,7 @@ export default {
       loading: false,
       loaded: false,
       proposals: {},
-      selectedState: 'all'
+      selectedState: 'all',
     };
   },
   computed: {
@@ -76,6 +76,7 @@ export default {
       return this.domain || this.$route.params.key;
     },
     space() {
+      // console.log('this.app.spaces', this.app.spaces);
       return this.app.spaces[this.key];
     },
     states() {
@@ -85,23 +86,29 @@ export default {
         'community',
         'active',
         'pending',
-        'closed'
+        'closed',
       ];
       return this.space.filters.onlyMembers
-        ? states.filter(state => !['core', 'community'].includes(state))
+        ? states.filter((state) => !['core', 'community'].includes(state))
         : states;
     },
     totalProposals() {
-      console.log('this', this, this.proposals);
+      // console.log('this', this, this.proposals);
+      if (!this.proposals) {
+        return 0;
+      }
       return Object.keys(this.proposals).length;
     },
     proposalsWithFilter() {
       const ts = (Date.now() / 1e3).toFixed();
+      // console.log('totalProposals', this.totalProposals);
       if (this.totalProposals === 0) return {};
       return Object.fromEntries(
         Object.entries(this.proposals)
-          .filter(proposal => {
-            const core = this.space.members.map(address =>
+          .filter((proposal) => {
+            // console.log('score', proposal[1].score, this.space.filters.minScore, this.space.filters);
+
+            const core = this.space.members.map((address) =>
               address.toLowerCase()
             );
             const author = proposal[1].address.toLowerCase();
@@ -135,10 +142,10 @@ export default {
           })
           .sort((a, b) => b[1].msg.payload.end - a[1].msg.payload.end, 0)
       );
-    }
+    },
   },
   methods: {
-    ...mapActions(['getProposals'])
+    ...mapActions(['getProposals']),
   },
   async created() {
     this.loading = true;
@@ -147,6 +154,6 @@ export default {
     this.proposals = await this.getProposals(this.space);
     this.loading = false;
     this.loaded = true;
-  }
+  },
 };
 </script>

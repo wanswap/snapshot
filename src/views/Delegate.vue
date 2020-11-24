@@ -80,7 +80,7 @@ export default {
           [this.web3.account, keccak256(toUtf8Bytes('test'))]
         ]
       );
-      console.log('Delegation to id "test"', delegation);
+      // console.log('Delegation to id "test"', delegation);
     }
     this.loaded = true;
   },
@@ -105,7 +105,7 @@ export default {
           [keccak256(toUtf8Bytes(this.form.id)), this.form.address]
         );
         const receipt = await tx.wait();
-        console.log('Receipt', receipt);
+        // console.log('Receipt', receipt);
         this.notify('You did it!');
       } catch (e) {
         console.log(e);
