@@ -1,10 +1,10 @@
 {
   "1": {
     "name": "Wanchain Mainnet",
-    "chainId": 3,
+    "chainId": 1,
     "network": "homestead",
     "rpcUrl": "https://gwan-ssl.wandevs.org:56891",
-    "explorer": "https://testnet.wanscan.org"
+    "explorer": "https://www.wanscan.org"
   },
   "3": {
     "name": "Wanchain Testnet",
