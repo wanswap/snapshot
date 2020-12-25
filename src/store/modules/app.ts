@@ -146,6 +146,8 @@ const actions = {
       const blockNumber = await getBlockNumber(
         getProvider(payload.space.network)
       );
+      console.debug('blockNumber', blockNumber);
+
       const result: any = {};
       const [proposal, votes] = await Promise.all([
         ipfs.get(payload.id),
@@ -156,6 +158,22 @@ const actions = {
       result.votes = votes;
       const { snapshot } = result.proposal.msg.payload;
       const blockTag = snapshot > blockNumber ? 'latest' : parseInt(snapshot);
+      console.debug('snapshot', snapshot);
+      payload.space.strategies = payload.space.strategies.filter(v=>{
+        if (v.params.disableBlock && v.params.disableBlock < snapshot) {
+          return false;
+        }
+
+        if (v.params.enableBlock) {
+          if (v.params.enableBlock < parseInt(snapshot)) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        return true;
+      });
+      console.debug('strategies', payload.space.strategies);
       const scores: any = await getScores(
         payload.space.strategies,
         payload.space.network,
