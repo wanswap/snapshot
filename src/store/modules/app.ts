@@ -113,7 +113,7 @@ const actions = {
     commit('GET_PROPOSALS_REQUEST');
     try {
       let proposals: any = await client.request(`${space.key}/proposals`);
-      // console.log('proposals', proposals, space.strategies);
+      // console.log('proposals', proposals, space, getProvider(space.network));
       if (proposals) {
         const scores: any = await getScores(
           space.strategies,

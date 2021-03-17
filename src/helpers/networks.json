@@ -12,5 +12,19 @@
     "network": "homestead",
     "rpcUrl": "https://gwan-ssl.wandevs.org:46891",
     "explorer": "https://testnet.wanscan.org"
+  },
+  "888": {
+    "name": "Wanchain Mainnet",
+    "chainId": 888,
+    "network": "homestead",
+    "rpcUrl": "https://gwan-ssl.wandevs.org:56891",
+    "explorer": "https://www.wanscan.org"
+  },
+  "999": {
+    "name": "Wanchain Testnet",
+    "chainId": 999,
+    "network": "homestead",
+    "rpcUrl": "https://gwan-ssl.wandevs.org:46891",
+    "explorer": "https://testnet.wanscan.org"
   }
 }
