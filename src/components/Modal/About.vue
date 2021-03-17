@@ -2,20 +2,17 @@
   <UiModal :open="open" @close="$emit('close')">
     <h3 class="m-4 text-center">About</h3>
     <div class="text-center">
-      <a href="https://twitter.com/SnapshotLabs" target="_blank">
+      <a href="https://twitter.com/wanchain_org" target="_blank">
         <Icon size="32" name="twitter" class="mr-1 mx-2" />
       </a>
-      <a href="https://discord.snapshot.page" target="_blank">
+      <a href="https://discord.gg/3DpeV6W" target="_blank">
         <Icon size="32" name="discord" class="mr-1 mx-2" />
       </a>
-      <a href="https://t.me/snapshotlabs" target="_blank">
+      <a href="https://t.me/WanchainANN" target="_blank">
         <Icon size="32" name="telegram" class="mr-1 mx-2" />
       </a>
-      <a :href="`https://github.com/${pkg.repository}`" target="_blank">
+      <a href="https://github.com/wanswap/snapshot" target="_blank">
         <Icon size="32" name="github" class="mr-1 mx-2" />
-      </a>
-      <a href="https://gitcoin.co/grants/1093/snapshot" target="_blank">
-        <Icon size="32" name="loveit" class="mr-1 mx-2" />
       </a>
     </div>
     <div class="m-4 p-4 border rounded-2 text-white">
