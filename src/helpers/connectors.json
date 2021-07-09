@@ -2,5 +2,9 @@
   "injected": {
     "id": "injected",
     "name": "WanMask"
+  },
+  "injectedMetaMask": {
+    "id": "injectedMetaMask",
+    "name": "MetaMask"
   }
 }
